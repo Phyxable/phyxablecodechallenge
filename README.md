@@ -5,7 +5,7 @@
 This is a code challenge to create a simple application which will be a bottom tab view for mobile screens and for web (Desktop) it will be a sidebar view. Create a card component to show the the title , description , image and id of the books stored in json format . The books data is api/books.json file.
 
 The sidebar/ bottom tab has been taken care of. You just need to create the card component and show the data in the card component
-The api is already created using nest cli and and example route is created to fetch the books data. You just need to create the card component and show the data in the card component.
+The api is already created using nest cli.
 
 No need to create connect to any database. Just use the json file as the database.
 
