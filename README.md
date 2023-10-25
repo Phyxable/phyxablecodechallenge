@@ -24,6 +24,7 @@ No need to create connect to any database. Just use the json file as the databas
     - This will start the api server on port 3000
     - swagger docs will be available on <http://localhost:3000/docs>
 - cd client
+  - cp .env.example .env.local
   - yarn install
   - yarn start
   - npx expo install
