@@ -1,10 +1,11 @@
 import { StyleSheet } from "react-native";
 import { Text, View } from "../../components/Themed";
+import { H1 } from "../../components/Fonts";
 
 export default function TabOneScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
+      <H1 style={styles.title}>Home</H1>
       <View
         style={styles.separator}
         lightColor="#eee"
@@ -12,7 +13,7 @@ export default function TabOneScreen() {
       />
       <View>
         <Text>
-          Your content goes here. This is a placeholder for the content
+          Please click Books tab to show the content
         </Text>
       </View>
     </View>
