@@ -1,7 +1,17 @@
-import { StyleSheet } from "react-native";
+import { ActivityIndicator, FlatList, StyleSheet } from "react-native";
 import { Text, View } from "../../components/Themed";
+import useGetBooks from "../../hooks/useGetBooks";
+import BookItem from "../../components/BookItem";
+
+type Book = {
+  id: string;
+  title: string;
+  image: string;
+};
 
 export default function TabOneScreen() {
+  const { books, loading, error } = useGetBooks("userId");
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Tab One</Text>
@@ -10,11 +20,17 @@ export default function TabOneScreen() {
         lightColor="#eee"
         darkColor="rgba(255,255,255,0.1)"
       />
-      <View>
-        <Text>
-          Your content goes here. This is a placeholder for the content
-        </Text>
-      </View>
+      {loading && <ActivityIndicator />}
+      {!loading && (
+        <View>
+          <FlatList
+            data={books}
+            horizontal
+            keyExtractor={(item) => item.id}
+            renderItem={({ item }) => <BookItem book={item} />}
+          />
+        </View>
+      )}
     </View>
   );
 }
@@ -22,8 +38,6 @@ export default function TabOneScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
   },
   title: {
     fontSize: 20,
